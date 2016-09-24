@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+	function validar (){
+		var nome = document.getElementById('USUARIO').value;
+		var senha = document.getElementById('PASS').value;
+
+		$.post( "billcontrol1.php",{ USUARIO : nome, PASS : senha })
+		  .done(function(result) {
+		  	data = JSON.parse(result);
+		  	if(data.success){
+		  		return document.getElementById("response").innerHTML = "Conectado \\o/ ";
+		  	}
+	  		return document.getElementById("response").innerHTML = "usuario ou senha inválidos";	
+		  })
+		  .fail(function(result) {
+		  		document.getElementById("response").innerHTML = "Erro no Serviço";	
+		  });
+	}
+</script>
+<head>
+	<title>Controle de Contas</title>
+    <link rel="stylesheet" type="text/css" href="regra-formatacao.css" />
+</head>
+<body>
+  <form id="entrar" action="billcontrol1.php" method="post">
+    <div id="caixa">  
+      <p>Usuario:<input type="text" id="USUARIO" value=""></p><br>
+  	  <p>Senha:<input type="password" id="PASS" value=""></p><br>
+  	  <div id="response"></div>
+	  <p><input type="button" value="Enviar" onclick="javascript:validar()"></p>  	
+  	</div>
+  </form>
+</body>
+</html>
