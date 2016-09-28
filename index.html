@@ -2,20 +2,32 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
+    function changeFocus(e){
+        if (e.keyCode==13){
+            document.getElementById('PASS').focus();
+        }
+    }
+    function onEnter(e){
+        if (e.keyCode==13){
+            validar();
+        }
+    }
 	function validar (){
 		var nome = document.getElementById('USUARIO').value;
 		var senha = document.getElementById('PASS').value;
 
-		$.post( "billcontrol1.php",{ USUARIO : nome, PASS : senha })
+		$.post( "valida_dados.php",{ USUARIO : nome, PASS : senha })
 		  .done(function(result) {
 		  	data = JSON.parse(result);
 		  	if(data.success){
-		  		return document.getElementById("response").innerHTML = "Conectado \\o/ ";
+		  		return document.getElementById("response").innerHTML = (
+		  			document.getElementById('entrar').submit());
 		  	}
-	  		return document.getElementById("response").innerHTML = "usuario ou senha inv√°lidos";	
+	  		return document.getElementById("response").innerHTML = (
+	  			"Falha: Usu·rio ou Senha inv·lidos");
 		  })
 		  .fail(function(result) {
-		  		document.getElementById("response").innerHTML = "Erro no Servi√ßo";	
+		  		document.getElementById("response").innerHTML = "Erro no Servi?o";
 		  });
 	}
 </script>
@@ -25,10 +37,10 @@
 </head>
 <body>
   <form id="entrar" action="billcontrol1.php" method="post">
-    <div id="caixa">  
-      <p>Usuario:<input type="text" id="USUARIO" value=""></p><br>
-  	  <p>Senha:<input type="password" id="PASS" value=""></p><br>
-  	  <div id="response"></div>
+    <div id="caixa"> 
+      <div id="response">&nbsp;</div>
+      <p>Usuario:<input type="text" name="USUARIO" id="USUARIO" value="" onkeypress="javascript:changeFocus(event)"></p><br>
+  	  <p>Senha:<input type="password" name="PASS" id="PASS" value="" onkeypress="javascript:onEnter(event)"></p><br>
 	  <p><input type="button" value="Enviar" onclick="javascript:validar()"></p>  	
   	</div>
   </form>

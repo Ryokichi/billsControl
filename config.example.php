@@ -2,6 +2,8 @@
 
 return [
 	'host' => 'localhost',
-	'user' =>'',
-	'password' => '',
+	'user' =>'root',
+	'password' => 'root_password',
 ];
+
+?>

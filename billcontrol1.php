@@ -1,28 +1,11 @@
 <?php
+session_start();
 
+echo "Usuario: ".$_POST['USUARIO']."<br>";
 
-$success = true;
+$_SESSION['USER'] = $_POST['USUARIO'] ;
 
+echo "Logado com sucesso: ".$_SESSION['USER'];
 
-
-
-
-
-$response = [
-	'usuario' => $_POST['USUARIO'],
-	'senha' => $_POST["PASS"],
-	'success' => $success
-];
-
-echo json_encode($response);
-
-die;
-
-
-
-echo $_POST['USUARIO'] ;
-echo "<br>" ;
-echo $_POST["PASS"];
-echo "<br>" ;
 
 ?>
