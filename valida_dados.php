@@ -12,6 +12,6 @@ $response = [
 	'success' => $con->response
 	];
 
-echo json_encode($response);
 
-?>
+sleep(3);
+echo json_encode($response);
