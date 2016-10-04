@@ -2,16 +2,20 @@
 include 'Conexao.php' ;
 
 $success = false;
-$login = $_POST['USUARIO'];
-$senha = $_POST['PASS'];
+
+$rawdata = file_get_contents("php://input");
+
+$json = json_decode($rawdata);
+
+$login = $json->USUARIO;
+$senha = $json->PASS;
+
 $con = new Conexao($login, $senha);
 
 $response = [
-	'usuario' => $_POST['USUARIO'],
-	'senha' => $_POST['PASS'],
-	'success' => $con->response
+	'user'=>$login,
+    'user_name'=>$con->user_name,
+	'success'=>$con->response
 	];
-
-
-sleep(3);
+sleep(1);
 echo json_encode($response);

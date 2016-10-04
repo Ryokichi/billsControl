@@ -1,160 +1,218 @@
 #caixa {
+    width:100%;
+    line-height: 10px;
+    margin: 300px 0;
+    text-align: center;
+    float: left;
+
 	//width:100px;
 	//height:100px;
-	position:absolute;
-	top:50%;
-	left:50%;
+	//position:absolute;
+	//top:50%;
+	//left:50%;
 	//margin-top:-50px;
 	//margin-left:-50px;
-	border: 2px solid-black;
+	//border: 2px solid-black;
+}
+.cssload-loader {
+    position: relative;
+    left: calc(50% - 30px);
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    perspective: 760px;
 }
 
-.overlay-loader {
-	display: none;
-	margin: auto;
-	width: 97px;
-	height: 97px;
-	position: relative;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+.cssload-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
 }
-.loader {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	width: 97px;
-	height: 97px;
-	animation-name: rotateAnim;
-	-o-animation-name: rotateAnim;
-	-ms-animation-name: rotateAnim;
-	-webkit-animation-name: rotateAnim;
-	-moz-animation-name: rotateAnim;
-	animation-duration: 0.4s;
-	-o-animation-duration: 0.4s;
-	-ms-animation-duration: 0.4s;
-	-webkit-animation-duration: 0.4s;
-	-moz-animation-duration: 0.4s;
-	animation-iteration-count: infinite;
-	-o-animation-iteration-count: infinite;
-	-ms-animation-iteration-count: infinite;
-	-webkit-animation-iteration-count: infinite;
-	-moz-animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	-o-animation-timing-function: linear;
-	-ms-animation-timing-function: linear;
-	-webkit-animation-timing-function: linear;
-	-moz-animation-timing-function: linear;
+
+.cssload-inner.cssload-one {
+    left: 0%;
+    top: 0%;
+    animation: cssload-rotate-one 2.05s linear infinite;
+    -o-animation: cssload-rotate-one 2.05s linear infinite;
+    -ms-animation: cssload-rotate-one 2.05s linear infinite;
+    -webkit-animation: cssload-rotate-one 2.05s linear infinite;
+    -moz-animation: cssload-rotate-one 2.05s linear infinite;
+    border-bottom: 3px solid rgb(0,85,255);
 }
-.loader div {
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	border: 1px solid rgb(0,0,0);
-	position: absolute;
-	top: 2px;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
+
+.cssload-inner.cssload-two {
+    right: 0%;
+    top: 0%;
+    animation: cssload-rotate-two 2.05s linear infinite;
+    -o-animation: cssload-rotate-two 2.05s linear infinite;
+    -ms-animation: cssload-rotate-two 2.05s linear infinite;
+    -webkit-animation: cssload-rotate-two 2.05s linear infinite;
+    -moz-animation: cssload-rotate-two 2.05s linear infinite;
+    border-right: 3px solid rgb(0,255,30);
 }
-.loader div:nth-child(odd) {
-	border-top: none;
-	border-left: none;
-}
-.loader div:nth-child(even) {
-	border-bottom: none;
-	border-right: none;
-}
-.loader div:nth-child(2) {
-	border-width: 2px;
-	left: 0px;
-	top: -4px;
-	width: 12px;
-	height: 12px;
-}
-.loader div:nth-child(3) {
-	border-width: 2px;
-	left: -1px;
-	top: 3px;
-	width: 18px;
-	height: 18px;
-}
-.loader div:nth-child(4) {
-	border-width: 3px;
-	left: -1px;
-	top: -4px;
-	width: 23px;
-	height: 23px;
-}
-.loader div:nth-child(5) {
-	border-width: 3px;
-	left: -1px;
-	top: 4px;
-	width: 31px;
-	height: 31px;
-}
-.loader div:nth-child(6) {
-	border-width: 4px;
-	left: 0px;
-	top: -4px;
-	width: 39px;
-	height: 39px;
-}
-.loader div:nth-child(7) {
-	border-width: 4px;
-	left: 0px;
-	top: 6px;
-	width: 49px;
-	height: 49px;
+
+.cssload-inner.cssload-three {
+    right: 0%;
+    bottom: 0%;
+    animation: cssload-rotate-three 2.05s linear infinite;
+    -o-animation: cssload-rotate-three 2.05s linear infinite;
+    -ms-animation: cssload-rotate-three 2.05s linear infinite;
+    -webkit-animation: cssload-rotate-three 2.05s linear infinite;
+    -moz-animation: cssload-rotate-three 2.05s linear infinite;
+    border-top: 3px solid rgb(185,191,2);
 }
 
 
-@keyframes rotateAnim {
-	from {
-		transform: rotate(360deg);
-	}
-	to {
-		transform: rotate(0deg);
-	}
+
+
+
+
+
+@keyframes cssload-rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
 }
 
-@-o-keyframes rotateAnim {
-	from {
-		-o-transform: rotate(360deg);
-	}
-	to {
-		-o-transform: rotate(0deg);
-	}
+@-o-keyframes cssload-rotate-one {
+    0% {
+        -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
 }
 
-@-ms-keyframes rotateAnim {
-	from {
-		-ms-transform: rotate(360deg);
-	}
-	to {
-		-ms-transform: rotate(0deg);
-	}
+@-ms-keyframes cssload-rotate-one {
+    0% {
+        -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
 }
 
-@-webkit-keyframes rotateAnim {
-	from {
-		-webkit-transform: rotate(360deg);
-	}
-	to {
-		-webkit-transform: rotate(0deg);
-	}
+@-webkit-keyframes cssload-rotate-one {
+    0% {
+        -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
 }
 
-@-moz-keyframes rotateAnim {
-	from {
-		-moz-transform: rotate(360deg);
-	}
-	to {
-		-moz-transform: rotate(0deg);
-	}
+@-moz-keyframes cssload-rotate-one {
+    0% {
+        -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes cssload-rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@-o-keyframes cssload-rotate-two {
+    0% {
+        -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@-ms-keyframes cssload-rotate-two {
+    0% {
+        -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes cssload-rotate-two {
+    0% {
+        -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes cssload-rotate-two {
+    0% {
+        -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@keyframes cssload-rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+@-o-keyframes cssload-rotate-three {
+    0% {
+        -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+@-ms-keyframes cssload-rotate-three {
+    0% {
+        -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes cssload-rotate-three {
+    0% {
+        -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes cssload-rotate-three {
+    0% {
+        -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
 }
